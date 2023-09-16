@@ -16,6 +16,7 @@ function App() {
     <div>
       <Locate handleChoice={setDestination} display={"Origin"}/>
       <Locate handleChoice={setOrigin} display={"Destination"}/>
+      
       { origin && 
         destination && 
         <Flight origin={origin} destination={destination} setFlight={setFlight}/> 
