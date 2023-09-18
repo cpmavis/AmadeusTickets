@@ -9,7 +9,7 @@ function Flight(props) {
         event.preventDefault();
         var returnDateParam = (returnDate ? "&returnDate=" + returnDate : "");
         fetch(
-            "/api/flights/origin=" + props.origin + 
+            "/api/flights?origin=" + props.origin + 
             "&destination=" + props.destination + 
             "&departDate=" + departDate + 
             "&adults=" + passengers + 
