@@ -24,7 +24,9 @@ function App() {
       { flight &&
         <Confirm flight={flight} setConfirmation={setConfirmation} /> 
       }
-
+      { confirmation &&
+        <Order confirmation={confirmation} />
+      }
     </div>
   )
 }
