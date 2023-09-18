@@ -33,4 +33,5 @@ enum AmadeusConnect {
     public FlightPrice confirm(FlightOfferSearch offer) throws ResponseException {
         return amadeus.shopping.flightOffersSearch.pricing.post(offer);
     }
+
 }

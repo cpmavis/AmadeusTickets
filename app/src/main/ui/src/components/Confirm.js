@@ -2,7 +2,7 @@ import React, { useState } from "react";
 function Confirm(props) {
     function submit(event, props){
         event.preventDefault();
-        fetch("api/confirm/", {
+        fetch("api/confirm", {
             method: "post",
             headers: {
                 'Accept': 'application/json',
