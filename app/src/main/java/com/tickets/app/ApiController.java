@@ -26,14 +26,9 @@ public class ApiController {
         return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate);
     }
 
-    /*
+
     @PostMapping("/confirm")
     public FlightPrice confirm(@RequestBody(required = true) FlightOfferSearch search) throws ResponseException {
         return AmadeusConnect.INSTANCE.confirm(search);
-    }
-     */
-    @PostMapping("/confirm")
-    public ResponseEntity<FlightPrice> confirm(@RequestBody FlightOfferSearch search) throws ResponseException {
-        return ResponseEntity.ok(AmadeusConnect.INSTANCE.confirm(search));
     }
 }

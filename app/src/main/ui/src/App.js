@@ -22,13 +22,12 @@ function App() {
         <Flight origin={origin} destination={destination} setFlight={setFlight}/> 
       }
       { flight &&
-        <Confirm flight={flight} setConfirmation={setConfirmation} /> 
+        <Confirm flight={flight} confirmation={confirmation} setConfirmation={setConfirmation} /> 
       }
-      { confirmation &&
-        <Order confirmation={confirmation} />
-      }
+
     </div>
   )
+  
 }
 
 export default App;

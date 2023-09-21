@@ -14,17 +14,13 @@ function Confirm(props) {
         .then((json) => {
             props.setConfirmation(json);
         });
+        console.log("It works")
     }
     return (
         <div>
             <form onSubmit={(e) => submit(e, props)}>
-                <input type="submit" />
+                <input type="submit" value="Confirm Price"/>
             </form>
-            {props.order &&
-             <div>Confirmation:<br></br>
-                {props.order}
-             </div>
-             }
         </div>
     );
 };
