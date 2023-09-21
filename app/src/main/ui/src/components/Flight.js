@@ -13,7 +13,8 @@ function Flight(props) {
             "&destination=" + props.destination + 
             "&departDate=" + departDate + 
             "&adults=" + passengers + 
-            returnDateParam
+            returnDateParam +
+            "&currencyCode=USD"
         )
         .then((response) => response.json())
         .then((json) => {
