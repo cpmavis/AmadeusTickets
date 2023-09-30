@@ -21,14 +21,16 @@ enum AmadeusConnect {
                 .with("keyword", keyword)
                 .and("subType", Locations.AIRPORT));
     }
-    public FlightOfferSearch[] flights(String origin, String destination, String departDate, String adults, String returnDate) throws ResponseException {
+    public FlightOfferSearch[] flights(String origin, String destination, String departDate, String adults,
+                                       String returnDate, Integer maxPrice) throws ResponseException {
         return amadeus.shopping.flightOffersSearch.get(
                 Params.with("originLocationCode", origin)
                         .and("destinationLocationCode", destination)
                         .and("departureDate", departDate)
                         .and("returnDate", returnDate)
                         .and("adults", adults)
-                        .and("max", 3));
+                        .and("maxPrice", maxPrice)
+                        .and("max", 10));
     }
     public FlightPrice confirm(FlightOfferSearch offer) throws ResponseException {
         return amadeus.shopping.flightOffersSearch.pricing.post(offer);

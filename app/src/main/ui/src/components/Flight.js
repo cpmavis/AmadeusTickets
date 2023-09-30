@@ -5,16 +5,16 @@ function Flight(props) {
     const [departDate, setDepartDate] = useState('');
     const [returnDate, setReturnDate] = useState('');
     const [flightOptions, setFlightOptions] = useState([]);
+    const [price, setPrice] = useState();
     function submit(event, props){
         event.preventDefault();
-        var returnDateParam = (returnDate ? "&returnDate=" + returnDate : "");
         fetch(
             "/api/flights?origin=" + props.origin + 
             "&destination=" + props.destination + 
             "&departDate=" + departDate + 
             "&adults=" + passengers + 
-            returnDateParam +
-            "&currencyCode=USD"
+            "&returnDate=" + returnDate +
+            "&maxPrice=" + price
         )
         .then((response) => response.json())
         .then((json) => {
@@ -42,7 +42,13 @@ function Flight(props) {
                     onChange={(e) => setReturnDate(e.target.value)}
                     id="return"
                     name="return" /><br></br>
-                <input type="submit" />
+                <label htmlFor="price">Set Max Price</label>
+                <input onChange={(e) => parseInt(setPrice(e.target.value))}
+                    type="integer"
+                    name="price"
+                    min="0"
+                    max={"100000"} /><br></br>
+                    <input type="submit" />
             </form>
             <FlightSelect flightOptions={flightOptions} setFlight={props.setFlight} />
         </div>

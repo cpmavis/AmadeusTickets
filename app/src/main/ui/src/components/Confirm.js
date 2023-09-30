@@ -14,7 +14,7 @@ function Confirm(props) {
         .then((json) => {
             props.setConfirmation(json);
         });
-        console.log("It works")
+        console.log("Price Confirmed")
     }
     return (
         <div>

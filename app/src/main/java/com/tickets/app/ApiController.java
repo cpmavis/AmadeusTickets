@@ -21,9 +21,10 @@ public class ApiController {
                                        @RequestParam(required = true) String destination,
                                        @RequestParam(required = true) String departDate,
                                        @RequestParam(required = true) String adults,
-                                       @RequestParam(required = false) String returnDate)
+                                       @RequestParam(required = false) String returnDate,
+                                       @RequestParam(required = false) Integer maxPrice)
             throws ResponseException {
-        return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate);
+        return AmadeusConnect.INSTANCE.flights(origin, destination, departDate, adults, returnDate, maxPrice);
     }
         @PostMapping("/confirm")
     public FlightPrice confirm(@RequestBody(required = true) FlightOfferSearch search) throws ResponseException {

@@ -1,5 +1,6 @@
 import React from "react";
-function FlightSelect(props) {
+function FlightSelect(props) { 
+    
     const options = props.flightOptions.map((flight, index) =>
       <>
         <input type="radio" id={flight.id} name="select" value={index} />
