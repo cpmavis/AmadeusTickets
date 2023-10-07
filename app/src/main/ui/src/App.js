@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import Locate from './components/Locate';
 import Flight from './components/Flight';
-//import Confirm from './components/Confirm';
+// import Confirm from './components/Confirm';
 
 function App() {
   const [origin, setOrigin] = useState();
@@ -17,8 +17,7 @@ function App() {
       <Locate handleChoice={setDestination} display={"Origin"}/>
       <Locate handleChoice={setOrigin} display={"Destination"}/>
       <Flight origin={origin} destination={destination} setFlight={setFlight} price={price} setPrice={setPrice}/>
-      {/*<Confirm flight={flight} confirmation={confirmation} setConfirmation={setConfirmation}/> */}
-      
+      {/* <Confirm flight={flight} confirmation={confirmation} setConfirmation={setConfirmation}/> */}
     </div>
   )
   

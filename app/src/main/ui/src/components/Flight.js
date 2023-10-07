@@ -19,6 +19,7 @@ function Flight(props) {
         .then((response) => response.json())
         .then((json) => {
             setFlightOptions(json);
+            
         });
     }
     return (
@@ -51,6 +52,7 @@ function Flight(props) {
                     <input type="submit" />
             </form>
             <FlightSelect flightOptions={flightOptions} setFlight={props.setFlight} />
+            
         </div>
     );
 };
