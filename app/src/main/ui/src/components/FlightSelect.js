@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 function FlightSelect(props) { 
     const options = props.flightOptions.map((flight, index) =>
       <>
@@ -22,7 +22,6 @@ function FlightSelect(props) {
             {options}
           </form>
         }
-        {console.log(props.flightOptions)}
       </div>
     );
 }

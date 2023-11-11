@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './components/webpages/index';
 import Booking from './components/webpages/booking';
+import Notification from './components/webpages/notification';
 
 
 
@@ -13,13 +14,12 @@ return (
     <Router>
     <Navbar />
     <Routes>
-        <Route exact path='/' exact element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/booking' element={<Booking/>} />
+        <Route path='/notification' element={<Notification/>} />
     </Routes>
     </Router>
 );
 }
 
 export default App;
-
-{/* Need to Implement router here to have a option that shows flights and another one that sends an email */}
