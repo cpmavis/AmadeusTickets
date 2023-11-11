@@ -1,26 +1,23 @@
+import React from 'react';
 import './App.css';
-import React, { useState } from 'react';
-import Locate from './components/Locate';
-import Flight from './components/Flight';
-// import Confirm from './components/Confirm';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+import Home from './components/webpages/index';
+import Booking from './components/webpages/booking';
+
+
 
 function App() {
-  const [origin, setOrigin] = useState();
-  const [destination, setDestination] = useState();
-  const [flight, setFlight] = useState();
-  const [confirmation, setConfirmation] = useState();
-  const [price, setPrice] = useState();
- 
-
-  return (
-    <div>
-      <Locate handleChoice={setDestination} display={"Origin"}/>
-      <Locate handleChoice={setOrigin} display={"Destination"}/>
-      <Flight origin={origin} destination={destination} setFlight={setFlight} price={price} setPrice={setPrice}/>
-      {/* <Confirm flight={flight} confirmation={confirmation} setConfirmation={setConfirmation}/> */}
-    </div>
-  )
-  
+return (
+    <Router>
+    <Navbar />
+    <Routes>
+        <Route exact path='/' exact element={<Home />} />
+        <Route path='/booking' element={<Booking/>} />
+    </Routes>
+    </Router>
+);
 }
 
 export default App;
